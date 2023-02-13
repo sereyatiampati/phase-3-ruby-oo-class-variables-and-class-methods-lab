@@ -3,27 +3,29 @@ require 'pry'
 class Song
     attr_accessor :name, :artist, :genre
     @@count = 0
-    @@artist=[]
-    @@genre=[]
+    @@artists=[]
+    @@genres=[]
+    @@artist_count=Hash.new
+    @@genre_count=Hash.new
     def initialize(name, artist, genre)
         @name=name
         @artist=artist
         @genre=genre
         @@count += 1
-        @@artist << artist
-        @@genre << genre
+        @@artists << artist
+        @@genres << genre
     end
 
     def self.count
         @@count        
     end
 
-    def self.artist
-        @@artist.uniq!
+    def self.artists
+        @@artists.uniq!
     end
 
-    def self.genre
-        @@genre.uniq!
+    def self.genres
+        @@genres.uniq!
     end
 end
 binding.pry
