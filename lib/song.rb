@@ -21,11 +21,19 @@ class Song
     end
 
     def self.artists
-        @@artists.uniq!
+        @@artists.uniq
     end
 
     def self.genres
-        @@genres.uniq!
+        @@genres.uniq
+    end
+
+    def self.genre_count
+        @@genres.tally
+    end
+
+    def self.artist_count
+        @@artists.tally
     end
 end
-binding.pry
+# binding.pry
